@@ -2,9 +2,9 @@
 
 This work is an extension of the [activation steering repository](https://github.com/cma1114/activation_steering) that fine tunes the direction vector of interest out of - or in to - the model. Rather than fine-tuning on specific behavior-positive or -negative desired output, this code uses a dual loss - one defined on tokens as usual to maintain coherent output, and one defined on internal representational similarity - at the residual stream layers identified as important - to the direction vector. WIP. 
 
-`block_search.py` explores the space of combinations of blocks to fine tune.
+`block_search.py` systematicaly explores the space of combinations of blocks to fine tune. `custom_fine_tune.ipynb` allows for interactively exploring fine tuning.
 
-Core tuning logic, implemented in `custom_fine_tune.ipynb`:
+Core tuning logic:
 
 ```python
 attach_activation_hooks(model, layers_positions, activation_storage, "end")
