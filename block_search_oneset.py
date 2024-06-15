@@ -1,3 +1,8 @@
+### Search to find which blocks to tune
+# Try all possible combination of blocks (mlp_up, mlp_down, attn_v, etc), measure loss, and print output
+# Same blocks for token loss and projection loss
+####################
+
 import torch 
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from tqdm import tqdm
