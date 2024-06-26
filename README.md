@@ -28,6 +28,8 @@ cum_projection_loss.backward()
 optimizer.step()
 ```
 
-`block_search.py` and `block_search_oneset.py` do combinatorial search over params to decide which ones to use, separately for token loss and tuning loss, or jointly, respectively
+`block_search.py` and `block_search_oneset.py` do combinatorial search over params to decide which ones to use, separately for token loss and tuning loss, or jointly, respectively.
+
+`calc_perplexity.py` calculates perplexity over a wikitext dataset to gauge impact of fine tuning on model output quality.
 
 
