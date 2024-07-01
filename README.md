@@ -2,7 +2,7 @@
 
 ## Internalizing steering vectors
 
-Full writeup of this work can be found in [this LessWrong post](https://www.lesswrong.com/posts/T9i9gX58ZckHx6syw/representation-tuning)
+Full writeup of this work can be found in [this Alignment Forum post](https://www.alignmentforum.org/posts/T9i9gX58ZckHx6syw/representation-tuning)
 
 This work is an extension of the [activation steering repository](https://github.com/cma1114/activation_steering) that fine tunes the direction vector of interest out of - or in to - the model. Rather than fine-tuning on specific behavior-positive or -negative targeted output, this code uses a dual loss - one defined on tokens as usual to maintain coherent output, and one defined on internal representational similarity - at the residual stream layers identified as important - to the direction vector.  
 
