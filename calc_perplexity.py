@@ -5,6 +5,7 @@ from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import os
 
+##adapted from https://github.com/timoschick/self-debiasing/blob/main/perplexity.py
 def compute_loss(model, input_ids: torch.LongTensor, labels: torch.LongTensor) -> torch.Tensor:
         outputs = model(input_ids, labels=labels)
         lm_logits = outputs[1]
