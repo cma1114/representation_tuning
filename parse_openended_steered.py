@@ -42,10 +42,11 @@ def create_comparison_files(regular_file, pos_neg_file, output_file1, output_fil
             create_comparison_string(reg_input, neg_output, reg_output)
         ])
 
-        comparisons3.extend([
-            create_comparison_string(reg_input, pos_output, neg_output),
-            create_comparison_string(reg_input, neg_output, pos_output)
-        ])
+        if output_file3:
+                comparisons3.extend([
+                create_comparison_string(reg_input, pos_output, neg_output),
+                create_comparison_string(reg_input, neg_output, pos_output)
+            ])
 
     with open(output_file1, 'w') as f:
         f.write(str(comparisons1))
@@ -53,19 +54,22 @@ def create_comparison_files(regular_file, pos_neg_file, output_file1, output_fil
     with open(output_file2, 'w') as f:
         f.write(str(comparisons2))
 
-    with open(output_file3, 'w') as f:
-        f.write(str(comparisons3))
+    if output_file3:
+        with open(output_file3, 'w') as f:
+            f.write(str(comparisons3))
 
 datadir = './data/'
 outputdir = './output/'
 
-modeltype = "negpluslie"
+modeltype = "posplustruth"
+steered_modeltype = "untuned"
+cmp = "" if steered_modeltype == modeltype else f"{steered_modeltype}_"
 qtype='instrumental'#'ambiguous'#
 
 regular_file = outputdir+qtype+'_openended_'+modeltype+'.txt'
-pos_neg_file = outputdir+qtype+'_openended_steered_'+modeltype+'.txt'
-output_file1 = datadir+qtype+'_openended_'+modeltype+'_unsteered_V_pos.txt'
-output_file2 = datadir+qtype+'_openended_'+modeltype+'_unsteered_V_neg.txt'
-output_file3 = datadir+qtype+'_openended_'+modeltype+'_pos_V_neg.txt'
+pos_neg_file = outputdir+qtype+'_openended_steered_'+steered_modeltype+'.txt'
+output_file1 = datadir+qtype+'_openended_'+modeltype+'_unsteered_V_' + cmp + 'pos.txt'
+output_file2 = datadir+qtype+'_openended_'+modeltype+'_unsteered_V_' + cmp + 'neg.txt'
+output_file3 = datadir+qtype+'_openended_'+modeltype+'_pos_V_neg.txt' if steered_modeltype == modeltype else ""
 
 create_comparison_files(regular_file, pos_neg_file, output_file1, output_file2, output_file3)

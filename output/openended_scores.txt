@@ -111,3 +111,20 @@ contrast=combined_truth_V_posplustruth
 provider=Anthropic
 scores=[2, 2, 2, 2, 1, 2, 2, 0, 2, 0, 2, 1, 2, 2, 2, 0, 1, 1, 1, 2, 2, 2, 2, 1, 2, 2, 1, 0, 1, 1, 1, 2, 2, 2, 2, 0, 1, 2, 2, 2, 2]
 
+
+
+contrast=combined_posplustruth_unsteered_V_untuned_pos
+provider=OpenAI
+scores=[1, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 1, 1, 2, 2, 2, 1, 2]+[1, 1, 1, 0, 1, 1, 2, 2, 1, 1, 1, 1, 1, 0, 2, 1, 2, 1, 2, 1, 1]
+
+contrast=combined_posplustruth_unsteered_V_untuned_pos
+provider=Anthropic
+scores=[1, 2, 1, 0, 0, 1, 2, 1, 0, 1, 1, 0, 1, 2, 1, 2, 2, 0, 1, 0]+[1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 0, 1, 1, 0, 2, 1, 2, 1, 2, 0, 1]
+
+contrast=combined_negpluslie_unsteered_V_untuned_neg
+provider=OpenAI
+scores=[1, 1, 1, 1, 2, 1, 0, 1, 0, 0, 1, 2, 1, 0, 1, 2, 1, 1, 0, 2]+[0, 2, 2, 2, 0, 2, 2, 0, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2, 1, 1, 2]
+
+contrast=combined_negpluslie_unsteered_V_untuned_neg
+provider=Anthropic
+scores=[1, 0, 1, 1, 2, 1, 2, 1, 2, 0, 2, 2, 0, 1, 1, 2, 2, 1, 0, 0]+[1, 2, 2, 2, 0, 2, 2, 1, 2, 1, 2, 2, 2, 1, 2, 0, 2, 2, 1, 0, 0]
